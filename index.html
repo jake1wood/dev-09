@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>dev 09</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+<html>
+<head>
+  <title>JavaScript &amp; jQuery - Chapter 2: Basic JavaScript Instructions - Example</title>
+</head>
+<body>
+  <h1>Elderflower</h1>
+  <div id="content">
+    <div id="greeting" class="message">Hello!</div>
+    <table>
+      <tr>
+        <td>Custom sign: </td>
+        <td id="userSign"><input type="text" id="signText" /></td>
+      </tr>
+      <tr>
+        <td>Upgrade Font?: </td>
+        <td id="userSign"><input type="checkbox" id="upgradeFont" /> <span>($1 per tile)</span></td>
+      </tr>
+      <tr>
+        <td>Total tiles: </td>
+        <td id="tiles"></td>
+      </tr>
+      <tr>
+        <td>Subtotal: </td>
+        <td id="subTotal">$</td>
+      </tr>
+      <tr>
+        <td>Shipping: </td>
+        <td id="shipping">$</td>
+      </tr>
+      <tr>
+        <td>Grand total: </td>
+        <td id="grandTotal">$</td></tr>
+    </table>
+    <br/>
+    <div style="width:40%;margin:0 auto">
+      <div style="float:left"><a href="#" class="action" id="pay">Pay Now</a></div>
+      <div style="float:right"><a href="#" class="cancel" id="cancel">Cancel</a></div>
+    </div>
+  </div>
+  </body>
+</html>
+  <script>
+$(document).ready(function () {
+
+
+    $('#signText').keyup(function () {
+               
+        var signValue = $('#signText').val();
+
+        calculatePrice(signValue.length);
+
+    });
+  
+  $('#upgradeFont').change(function(){
+  
+  			var signValue = $('#signText').val();
+
+        calculatePrice(signValue.length);
+  
+  });
+  
+  $('#pay').click(function(){
+  		
+    	alert("You bought your sign");
+    	clearForm();
+  
+  });
+  
+  $("#cancel").click(function(){
+  
+    if(confirm("Are you sure you want to cancel"))
+    {
+      clearForm();
+      
+    }
+  
+  });  
+  
+
+
+});
+    
+  </script>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
